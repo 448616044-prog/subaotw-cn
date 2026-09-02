@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="applicable-device" content="pc,mobile">
+  <meta charset="UTF-8">
+  <meta name="lastmod" content="2026-08-19"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>大陆寄台湾体积重计算器 | 海运计费重量 - 速豹集运</title>
+<meta name="description" content="大陆寄台湾体积重量计算器：长×宽×高÷6000自动算材积重。海运/空运计费重量对比。家具搬家设备运输按实重还是材积重？在线一秒算清。TEL:13026...">
+<link rel="canonical" href="https://www.subaotw.cn/volume-calculator-tool">
+<style>body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;color:#333;line-height:1.8;margin:0;background:#f5f7fa}.container{max-width:900px;margin:0 auto;padding:0 20px}header{background:#0052D9;color:#fff;padding:16px 0}.hero{background:linear-gradient(135deg,#0052D9,#003DA5);color:#fff;padding:48px 0 32px}.hero h1{font-size:26px;margin:0}.calc{background:#fff;padding:32px;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);margin:-20px auto 40px}input{border:2px solid #E0E0E0;border-radius:8px;padding:12px;font-size:16px;width:100%;margin:8px 0}input:focus{border-color:#0052D9;outline:none}label{font-weight:600;display:block;margin:12px 0 4px}.result{background:#E8F2FF;padding:20px;border-radius:12px;margin:20px 0;border-left:4px solid #0052D9}.result .big{font-size:28px;font-weight:700;color:#0052D9}.btn{background:#FF6F00;color:#fff;padding:14px 32px;border-radius:30px;font-weight:700;border:none;cursor:pointer;font-size:16px}.cta{background:#0052D9;color:#fff;text-align:center;padding:40px 0}.cta a{display:inline-block;background:#fff;color:#0052D9;padding:14px 32px;border-radius:30px;font-weight:700;text-decoration:none}footer{background:#1a1a2e;color:rgba(255,255,255,.5);padding:40px 0;text-align:center;font-size:14px}</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"速豹集运 - 大陆寄台湾大件物流","description":"大陆寄台湾大件物流专线，门到门双清。","url":"https://www.subaotw.cn/volume-calculator-tool","dateModified": "2026-08-19"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.subaotw.cn/"},{"@type":"ListItem","position":2,"name":"大陆寄台湾体积重计算器"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"速豹集运","url":"https://www.subaotw.cn","description":"大陆寄台湾大件物流专线 — 搬家/家具/设备/建材/大货专线 + 台湾寄大陆快递","foundingDate":"2020","contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"13026603164"}}</script>
+<meta name="format-detection" content="telephone=no">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"体积重量计算器可以寄到台湾吗？","acceptedAnswer":{"@type":"Answer","text":"体积重量计算器可以。速豹集运提供门到门专线，专业包装、报关清关、台湾派送一站式服务。"}},{"@type":"Question","name":"体积重量计算器到台湾多少钱？","acceptedAnswer":{"@type":"Answer","text":"费用按重量/体积/品类计算，海运低至8元/kg。拨打13026603164获取精准报价。"}},{"@type":"Question","name":"体积重量计算器到台湾多久？","acceptedAnswer":{"@type":"Answer","text":"海运一般5-7天，空运2-3天。具体时效根据货物和目的地而定。"}}]}</script>
+</head><body>
+<header><div class="container">      <nav class="nav">
+        <a href="/equipment/">大件物流</a>
+        <a href="/pricing-calculator">运费估算</a>
+        <a href="/volume-calculator">材积计算</a>
+        <a href="/prohibited-items-checker">禁运查询</a>
+        <a href="/article-list">文章攻略</a>
+        <a href="/contact">询价报价</a>
+        <a href="/tw-to-cn/">台湾寄大陆</a>
+        <a href="/about">关于我们</a>
+      </nav></div></header>
+<section class="hero"><div class="container"><h1>体积重量计算器</h1><p style="opacity:.9">海运/空运计费重量自动对比 · 材积重=长×宽×高÷6000</p></div></section>
+<div class="container"><div class="calc">
+<label>长度 (cm)</label><input type="number" id="l" placeholder="200" min="1">
+<label>宽度 (cm)</label><input type="number" id="w" placeholder="100" min="1">
+<label>高度 (cm)</label><input type="number" id="h" placeholder="150" min="1">
+<label>实际重量 (kg)</label><input type="number" id="rw" placeholder="500" min="1">
+<button class="btn" onclick="calc()">📐 计算计费重量</button>
+<div class="result" id="res" style="display:none"><p style="margin:0">计费重量（取实重和材积重较大值）</p><div class="big" id="billWeight">0 kg</div><p style="font-size:13px;color:#999">材积重=<span id="volWeight">0</span>kg · 实重=<span id="realWeight">0</span>kg</p></div>
+</div></div>
+<section class="cta"><div class="container"><h2>📞 不确定怎么算？</h2><p style="margin:12px 0">拨打 13026603164，专属客服帮你精确计算</p><a href="tel:13026603164">立即咨询 →</a></div></section>
+<div style="margin:24px 0;padding:20px;background:#f8f9fa;border-radius:10px">
+<h2 style="font-size:20px;margin:0 0 16px">❓ 常见问题</h2>
+<div style="margin-bottom:12px"><strong>体积重量计算器可以寄到台湾吗？</strong><p style="color:#555;margin-top:4px">体积重量计算器可以。速豹集运提供门到门专线，专业包装、报关清关、台湾派送一站式服务。</p></div>
+<div style="margin-bottom:12px"><strong>体积重量计算器到台湾多少钱？</strong><p style="color:#555;margin-top:4px">费用按重量/体积/品类计算，海运低至8元/kg。拨打13026603164获取精准报价。</p></div>
+<div style="margin-bottom:12px"><strong>体积重量计算器到台湾多久？</strong><p style="color:#555;margin-top:4px">海运一般5-7天，空运2-3天。具体时效根据货物和目的地而定。</p></div>
+</div>
+<footer><div class="container"><p>© 2026 速豹集运 · <a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow">湘ICP备2026016030号-2</a></p></div><div style="max-width:900px;margin:0 auto;padding:0 20px 20px;text-align:center;font-size:12px;color:#999"><p style="margin:0">大陆到台湾物流专线 · 家具海运搬家设备出口建材运输 · 门到门一站式服务 · 电话13026603164</p></div>
+</footer>
+<script>function calc(){var l=parseFloat(document.getElementById('l').value)||0;var w=parseFloat(document.getElementById('w').value)||0;var h=parseFloat(document.getElementById('h').value)||0;var rw=parseFloat(document.getElementById('rw').value)||0;var vw=Math.round(l*w*h/6000);var bw=Math.max(rw,vw);document.getElementById('volWeight').textContent=vw;document.getElementById('realWeight').textContent=rw;document.getElementById('billWeight').textContent=bw+' kg';document.getElementById('res').style.display='block'}</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1ed69d17767d3d995a887c63ef56b320";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body></html>

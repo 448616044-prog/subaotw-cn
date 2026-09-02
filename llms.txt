@@ -1,0 +1,36 @@
+# llms.txt — subaotw.cn
+# 速豹集运 · 两岸大件物流专家
+# 告诉大模型如何索引和理解本站内容
+
+Allow: *
+
+# 网站信息
+Name: 速豹集运（Subaotw Logistics）
+Description: 大陆到台湾大件物流专家，专注两岸搬家/家具/设备/货运/建材运输。6年经验，500+企业信赖。
+ICP: 湘ICP备2026016030号-2
+Contact: 13026603164 | business@videotvai.com
+
+# 核心服务
+/ → 首页
+/equipment/ → 大件物流（16类设备出口台湾）
+/moving-taiwan → 大陆搬家到台湾
+/furniture-shipping → 家具海运台湾
+/heavy-machinery → 重型机械出口台湾
+/oversized-cargo → 超限货物特种运输
+
+# 台湾寄大陆
+/tw-to-cn/ → 台湾寄大陆集运（食品/保健品/化妆品/茶叶）
+/tw-to-cn/food-shipping → 台湾食品寄大陆
+/tw-to-cn/tea-shipping → 台湾茶叶寄大陆
+/tw-to-cn/health-products → 台湾保健品寄大陆
+/tw-to-cn/cosmetics-shipping → 台湾化妆品寄大陆
+
+# 物流指南
+/guide/ → 两岸物流知识中心（15篇专业指南）
+/guide/equipment-export-process → 大陆大件物流出口台湾全流程
+/guide/customs-documents → 出口报关文件清单
+/guide/shipping-compare → 海运整柜vs拼柜vs空运对比
+
+# 工具
+/pricing-calculator → 大件物流运费估算
+/volume-calculator → 材积重量计算器

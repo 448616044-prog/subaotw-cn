@@ -1,0 +1,67 @@
+name: Deploy subaotw.cn to CVM
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy subaotw.cn → Tencent CVM
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Deploy to CVM
+        env:
+          SSH_KEY_BASE64: ${{ secrets.CVM_SSH_KEY }}
+          CVM_HOST: ${{ secrets.CVM_HOST }}
+          CVM_USER: ${{ secrets.CVM_USER }}
+        run: |
+          set -e
+
+          # 解码 SSH 密钥
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          if echo "$SSH_KEY_BASE64" | base64 -d &>/dev/null; then
+            echo "$SSH_KEY_BASE64" | base64 -d > ~/.ssh/deploy_key
+          else
+            echo "$SSH_KEY_BASE64" > ~/.ssh/deploy_key
+          fi
+          chmod 600 ~/.ssh/deploy_key
+          grep -q "BEGIN OPENSSH PRIVATE KEY" ~/.ssh/deploy_key || { echo "Key format error"; exit 1; }
+          ssh-keyscan -H $CVM_HOST >> ~/.ssh/known_hosts 2>/dev/null || true
+
+          # 打包整站（排除开发脚本/文档/版本目录，确保 CSS/JS/images/favicon 等资产同步部署）
+          # 显式排除 AppleDouble 垃圾文件（._*）与 .DS_Store，避免污染线上目录
+          tar czf /tmp/deploy.tar.gz \
+            --exclude='*.py' --exclude='__pycache__' --exclude='*.pyc' \
+            --exclude='.git' --exclude='.github' --exclude='.workbuddy' \
+            --exclude='*.md' --exclude='._*' --exclude='.DS_Store' \
+            .
+          echo "Package: $(du -h /tmp/deploy.tar.gz | cut -f1)"
+
+          # SCP 到 /tmp（CVM_USER 非 root，无 /var/www 写权限）
+          scp -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no /tmp/deploy.tar.gz $CVM_USER@$CVM_HOST:/tmp/deploy.tar.gz
+
+          # SSH 解压到目标目录（CVM_USER 非 root，用 sudo 解决权限）
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no $CVM_USER@$CVM_HOST << 'ENDSSH'
+            set -e
+            cd /var/www/subaotw-cn
+            if tar xzf /tmp/deploy.tar.gz 2>/dev/null; then
+              echo "Extracted directly"
+            else
+              sudo tar xzf /tmp/deploy.tar.gz
+              echo "Extracted with sudo"
+            fi
+            rm -f /tmp/deploy.tar.gz
+
+            # 清理 AppleDouble 垃圾文件（历史遗留，防止搜索引擎抓到空页面）
+            find /var/www/subaotw-cn -name '._*' -type f -delete 2>/dev/null || true
+
+            echo "index.html: $(wc -l < index.html) lines"
+            nginx -t 2>/dev/null && systemctl reload nginx 2>/dev/null || sudo nginx -t && sudo systemctl reload nginx
+            echo "Deploy complete!"
+          ENDSSH

@@ -1,0 +1,30 @@
+# 本地工作区/自动化状态（勿入仓，videotvai 站同样处理）
+.workbuddy/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# macOS（AppleDouble 垃圾文件，曾污染线上目录）
+.DS_Store
+._*
+
+# 编辑器 / 系统
+.idea/
+.vscode/
+*.swp
+Thumbs.db
+
+# 本地临时产物
+push-tmp.txt
+*.log
+*.tmp
+.bak/
+*.bak
+
+# 备份目录
+*-bak*/
+*.orig

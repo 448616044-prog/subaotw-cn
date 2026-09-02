@@ -1,0 +1,32 @@
+# 全站开放抓取
+User-agent: *
+Allow: /
+Disallow: /cdn-cgi/
+
+# 百度蜘蛛 — 全站允许，低延迟
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+# 百度移动蜘蛛
+User-agent: Baiduspider-image
+Allow: /
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Sogou
+User-agent: Sogou web spider
+Allow: /
+
+# 360搜索
+User-agent: 360Spider
+Allow: /
+
+# 神马搜索（移动端）
+User-agent: Yisouspider
+Allow: /
+
+# Sitemap
+Sitemap: https://www.subaotw.cn/sitemap.xml
