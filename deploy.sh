@@ -7,23 +7,42 @@
 # 优先使用 GitHub Actions 自动部署（push main 触发 .github/workflows/deploy.yml）。
 # 本脚本用于 Actions 未配置 secrets、或需要紧急手动发布时使用。
 #
-# 依赖：OPENSSH 私钥（默认读取 ../../videotv-correct-ssh-key.txt，
-#       可用环境变量 SSH_KEY 覆盖）
+# 依赖：OPENSSH 私钥。可用环境变量 SSH_KEY 覆盖；
+#       未指定时按候选列表自动探测第一个能免密登录的密钥。
+#       （历史默认 ../../videotv-correct-ssh-key.txt 已不存在，故改为自动探测）
 
 set -e
 
 # 站点根目录 = 本脚本所在目录
 LOCAL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SSH_KEY="${SSH_KEY:-$LOCAL_DIR/../../videotv-correct-ssh-key.txt}"
 SERVER="ubuntu@175.178.184.141"
 SITE_DIR="/var/www/subaotw-cn"
 
-# 1. 前置校验
+# 1. 解析 SSH 密钥：环境变量优先，否则自动探测
+CANDIDATES=(
+  "$HOME/.ssh/videotv_github_actions"
+  "$HOME/.ssh/videotv_deploy"
+  "$HOME/.ssh/videotvai_deploy"
+  "$LOCAL_DIR/../../videotv-correct-ssh-key.txt"
+)
+if [ -z "$SSH_KEY" ]; then
+  for k in "${CANDIDATES[@]}"; do
+    [ -f "$k" ] || continue
+    if ssh -i "$k" -o StrictHostKeyChecking=no -o BatchMode=yes \
+           -o ConnectTimeout=6 "$SERVER" "echo ok" >/dev/null 2>&1; then
+      SSH_KEY="$k"
+      break
+    fi
+  done
+fi
+SSH_KEY="${SSH_KEY:-${CANDIDATES[0]}}"
+
 if [ ! -f "$SSH_KEY" ]; then
   echo "❌ 找不到 SSH 密钥: $SSH_KEY"
   echo "   可用环境变量指定: SSH_KEY=/path/to/key bash deploy.sh"
   exit 1
 fi
+echo "🔑 使用密钥: $SSH_KEY"
 
 # 2. JS 语法校验（脚本存在才校验，不存在则跳过）
 if [ -f "$LOCAL_DIR/scripts/validate-js.py" ]; then
