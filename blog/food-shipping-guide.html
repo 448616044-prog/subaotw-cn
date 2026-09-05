@@ -347,7 +347,7 @@
 
 <!-- 移动端菜单 -->
       
-    </div>
+    <div id="mobileMenu" class="mobile-menu">
     <a href="/faq" class="mobile-nav-link" data-nav="can-i-ship">可以寄吗</a>
     <a href="/tw-to-cn/customs-tax-guide" class="mobile-nav-link" data-nav="customs-guide">关税速查</a>
     <a href="/volume-calculator" class="mobile-nav-link" data-nav="volume-calculator">材积计算</a>
@@ -1107,7 +1107,6 @@
 function openContactModal(){document.getElementById('contactModal').classList.add('active')}
 function closeContactModal(){document.getElementById('contactModal').classList.remove('active');setTimeout(function(){document.getElementById('contactFormWrap').style.display='block';document.getElementById('successMsg').style.display='none';document.getElementById('contactMsgForm').reset()},300)}
 function submitContactForm(e){e.preventDefault();var n=document.getElementById('cfName').value,c=document.getElementById('cfContact').value,i=document.getElementById('cfItem').value||'未填',m=document.getElementById('cfMsg').value||'未填';console.log('event','contact_form_submit',{event_category:'conversion',event_label:'floating_contact'});document.getElementById('contactFormWrap').style.display='none';document.getElementById('successMsg').style.display='block';fetch('https://formsubmit.co/ajax/business@videotvai.com',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,contact:c,item:i,message:m,_subject:'[速豹官网留言] '+n,})}).catch(function(){})}
-);var f=e.target;f.style.display='none';document.getElementById('ldone').style.display='block';fetch('https://formsubmit.co/ajax/business@videotvai.com',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:'微信: '+lid,contact:lid,item:litem,message:'来源: '+page+'\n联系方式: '+lid+'\n物品: '+litem,_subject:'[速豹LEAD] '+lid+' - '+litem})}).catch(function(){})}
 </script><script>window.addEventListener("scroll",function(){var h=document.getElementById("header");if(h)h.classList.toggle("scrolled",window.scrollY>10)})</script>
 
 <svg style="display:none" aria-hidden="true">
