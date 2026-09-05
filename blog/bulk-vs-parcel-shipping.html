@@ -24,7 +24,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"速豹集运","url":"https://www.subaotw.cn","logo":"https://www.subaotw.cn/images/logo.png","contactPoint":{"@type":"ContactPoint","telephone":"13026603164","contactType":"customer service"},"address":{"@type":"PostalAddress","addressCountry":"中国","addressRegion":"湖南省"},"sameAs":["https://www.subaotw.cn"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.subaotw.cn/"},{"@type":"ListItem","position":2,"name":"文章攻略","item":"https://www.subaotw.cn/article-list"},{"@type":"ListItem","position":3,"name":"大件vs小包专线区别","item":"https://www.subaotw.cn/blog/bulk-vs-parcel-shipping"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"大陆寄台湾，多少公斤算大件？","acceptedAnswer":{"@type":"Answer","text":"一般来说，50kg是一个分水岭。50kg以下走小包集运专线（按公斤计费，RMB 8-25/kg）；50kg以上或体积超过0.5m³，走大件海运专线（按立方米或吨计费，RMB 400-800/m³或吨）。但这只是一个参考线——如果你的东西「体积大但重量轻」（比如一个沙发重30kg但占2m³），即使不到50kg也应该走大件专线（按体积计费才划算）。核心判断标准是「体积重量比」而不是单纯的公斤数。微信 13026603164 发物品信息帮你判断。"}},
+    {"@type":"Question","name":"大陆寄台湾，多少公斤算大件？","acceptedAnswer":{"@type":"Answer","text":"一般来说，50kg是一个分水岭。50kg以下走小包集运专线（按公斤计费，按单报价）；50kg以上或体积超过0.5m³，走大件海运专线（按立方米或吨计费，按单报价或吨）。但这只是一个参考线——如果你的东西「体积大但重量轻」（比如一个沙发重30kg但占2m³），即使不到50kg也应该走大件专线（按体积计费才划算）。核心判断标准是「体积重量比」而不是单纯的公斤数。微信 13026603164 发物品信息帮你判断。"}},
     {"@type":"Question","name":"大件海运和小包集运价格差多少？","acceptedAnswer":{"@type":"Answer","text":"差价可以非常大。以运一套三人沙发（约2m³/50kg）为例：走小包集运按重量算→50kg×RMB 15/kg=RMB 750，但小包集运通常有体积重折算（2m³÷0.006=333kg计费重）→实际收333×15=约RMB 5000；走大件海运按体积算→2m³×RMB 1000=RMB 2000。差价2.5倍。更大的物品差价更大。结论：体积大的东西走大件海运专线能省50-80%。微信 13026603164 精确对比报价。"}},
     {"@type":"Question","name":"大件海运和小包集运时效差多少？","acceptedAnswer":{"@type":"Answer","text":"小包集运：快件3-5天（空运），经济7-12天（海运+陆运）。大件海运：10-20天（纯海运，航班固定，不可压缩）。差距在于：小包可以走空运快件，大件基本只能走海运（空运大件费用是天价）。如果你寄的东西不大但很急，宁愿多花一点钱走小包空运快件；如果你寄的是家具/设备，只能走大件海运，提前2-3周规划时间。"}},
     {"@type":"Question","name":"淘宝买的大件家具走什么渠道？","acceptedAnswer":{"@type":"Answer","text":"淘宝买的家具建议走大件海运专线，而不是小包集运。原因是：1）家具体积大，小包集运按体积重计费很贵；2）大件专线提供专业木箱打包+熏蒸+搬运服务，小包集运没有；3）大件专线可以直接送到台湾的家里，小包集运可能只送到物流点。流程：淘宝下单→寄到速豹深圳/广州仓库→我们统一打木箱→海运到台湾→送货入户。微信 13026603164 获取仓库地址和报价。"}},
@@ -97,7 +97,7 @@
     <tr><td><strong>重量</strong></td><td>50kg以下</td><td>50kg以上（或体积大）</td></tr>
     <tr><td><strong>体积</strong></td><td>0.5m³以下</td><td>0.5m³以上</td></tr>
     <tr><td><strong>计费方式</strong></td><td>按公斤（含体积重折算）</td><td>按立方米或吨</td></tr>
-    <tr><td><strong>单价</strong></td><td>RMB 8-25/kg</td><td>RMB 400-800/m³或吨</td></tr>
+    <tr><td><strong>单价</strong></td><td>按单报价</td><td>按单报价或吨</td></tr>
     <tr><td><strong>运输方式</strong></td><td>空运/陆运为主</td><td>海运为主</td></tr>
     <tr><td><strong>时效</strong></td><td>3-12天</td><td>10-20天</td></tr>
     <tr><td><strong>典型物品</strong></td><td>衣服、零食、化妆品、手机</td><td>家具、设备、建材、搬家物品</td></tr>
@@ -161,14 +161,14 @@
   <p>不是「要么小包要么大件」，而是<strong>小件走小包、大件走大件，两者混用最省钱。</strong></p>
   <p>比如你要寄到台湾的东西：</p>
   <ul>
-    <li>2箱衣服（20kg，密度大）→ 走小包普货，RMB 150-300</li>
-    <li>1箱零食（5kg）→ 走小包敏感货，RMB 80-130</li>
-    <li>1张书桌+2把椅子（0.6m³/35kg）→ 走大件海运，RMB 600-800</li>
-    <li><strong>总计约：RMB 830-1230</strong></li>
+    <li>2箱衣服（20kg，密度大）→ 走小包普货，微信发清单即可估价</li>
+    <li>1箱零食（5kg）→ 走小包敏感货，微信发清单即可估价</li>
+    <li>1张书桌+2把椅子（0.6m³/35kg）→ 走大件海运，微信发清单即可估价</li>
+    <li><strong>三类货物分属三个渠道，微信发清单可一次核出总价</strong></li>
   </ul>
-  <p>如果全部走小包：书桌椅体积重100kg→ RMB 1500+衣服300+零食130 ≈ <strong>RMB 1930</strong></p>
-  <p>如果全部走大件：总体积约1m³→ RMB 1000，但衣服零食没必要（大件时效慢）</p>
-  <p><strong>→ 混用比全走小包省了36%，比全走大件时效快</strong></p>
+  <p>如果全部走小包：书桌椅体积重按 100kg 计费重核算，加上衣服按实重、零食按敏感货渠道，总价会明显偏高</p>
+  <p>如果全部走大件：总体积约 1m³ 按体积核算，但衣服零食走大件时效慢，没必要</p>
+  <p><strong>→ 混用（小件走小包、大件走海运）通常最省钱，且比全走大件时效快</strong></p>
 
   <div class="cta-block">
     <h3>📦 混用策略 — 我们帮你优化</h3>
@@ -179,7 +179,7 @@
   <h2>六、常见问题</h2>
   <div class="faq">
     <details><summary>什么叫「体积重」？为什么小包集运要算这个？</summary><div class="faq-a"><p>体积重=长×宽×高(cm)÷6000。物流公司运输时，轻货占空间大，按实际重量收费会亏本，所以用体积重折算。国际快递（顺丰/DHL）的体积重折算因子是5000，两岸专线一般是6000（更友好）。大件海运不折算体积重——直接按实际立方米计费，所以体积大的东西走大件海运更划算。</p></div></details>
-    <details><summary>我寄一个单人床垫，不到50kg，走小包还是大件？</summary><div class="faq-a"><p>走大件。床垫虽然可能不到50kg，但体积很大（约1-1.5m³），走小包体积重按6000折算要167-250kg计费重→RMB 2500-3750。走大件海运按1-1.5m³→RMB 1000-1500。结论：凡是「体积大、重量轻的物品」不管实重多少，走大件海运一定比小包便宜。</p></div></details>
+    <details><summary>我寄一个单人床垫，不到50kg，走小包还是大件？</summary><div class="faq-a"><p>走大件。床垫虽然可能不到50kg，但体积很大（约1-1.5m³），走小包体积重按6000折算要167-250kg计费重→ 逐单核算。走大件海运按1-1.5m³→ 逐单核算。结论：凡是「体积大、重量轻的物品」不管实重多少，走大件海运一定比小包便宜。</p></div></details>
     <details><summary>大件海运有最低消费吗？</summary><div class="faq-a"><p>有。大件海运通常最低按1m³或1吨起计费（取大值）。如果你的物品不到1m³也按1m³算。所以量太小时（比如只寄一把椅子），大件的最低消费可能比小包还贵——这时候走小包反而划算。建议等攒够至少1m³左右再走大件海运。不确定？微信 13026603164 帮你算。</p></div></details>
     <details><summary>大件海运可以在台湾送到没有电梯的楼上吗？</summary><div class="faq-a"><p>可以，但需要提前告知。无电梯搬运会产生额外的人工费（按楼层和物品重量计算）。搬家或运大件家具时，务必提前告诉客服台湾收件地址的楼层和是否有电梯，我们会把这部分费用算进报价里。如果到了才发现没电梯，临时加人加费会很被动。</p></div></details>
   </div>
