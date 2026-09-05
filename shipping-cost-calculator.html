@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="/style.css">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<title>大陆寄台湾运费计算器2026 | 海运空运费用在线估算 - 速豹集运</title>
-<meta name="description" content="大陆寄台湾运费在线计算器：家具/搬家/设备/建材海运费用一键估算。输入重量和体积，即时获得参考运价。支持整柜FCL和拼柜LCL方案对比。TEL:130...">
+<title>大陆寄台湾运费2026 | 海运空运在线询价 - 速豹集运</title>
+<meta name="description" content="大陆寄台湾运费按品类、实重与材积逐单核算，官网不公示固定费率。填写重量与体积，一键生成询价清单，30 分钟出精准报价。支持整柜FCL和拼柜LCL方案咨询。TEL:13026603164">
 <link rel="canonical" href="https://www.subaotw.cn/shipping-cost-calculator">
 <style>
 body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;color:#333;line-height:1.8;margin:0;background:#f5f7fa}
@@ -35,7 +35,7 @@ footer{background:#1a1a2e;color:rgba(255,255,255,.5);padding:40px 0;text-align:c
 </style>
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"速豹集运 - 大陆寄台湾大件物流","description":"大陆寄台湾大件物流专线，门到门双清。","url":"https://www.subaotw.cn/shipping-cost-calculator","dateModified": "2026-08-18"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.subaotw.cn/"},{"@type":"ListItem","position":2,"name":"大陆寄台湾运费计算器"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.subaotw.cn/"},{"@type":"ListItem","position":2,"name":"大陆寄台湾运费询价"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"速豹集运","url":"https://www.subaotw.cn","description":"大陆寄台湾大件物流专线 — 搬家/家具/设备/建材/大货专线 + 台湾寄大陆快递","foundingDate":"2020","contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"13026603164"}}</script>
 <meta name="format-detection" content="telephone=no">
 </head>
@@ -46,7 +46,7 @@ footer{background:#1a1a2e;color:rgba(255,255,255,.5);padding:40px 0;text-align:c
       <button class="burger" aria-label="菜单" onclick="this.nextElementSibling.classList.toggle('open')">☰</button>
       <nav class="nav">
         <a href="/equipment/">大件物流</a>
-        <a href="/pricing-calculator">运费估算</a>
+        <a href="/pricing-calculator">运费询价</a>
         <a href="/volume-calculator">材积计算</a>
         <a href="/article-list" class="active">文章攻略</a>
         <a href="/contact">询价报价</a>
@@ -58,21 +58,24 @@ footer{background:#1a1a2e;color:rgba(255,255,255,.5);padding:40px 0;text-align:c
 
 <header><div class="header-inner"><a href="/" style="color:#fff;text-decoration:none;font-size:20px;font-weight:700">速豹集运</a></div></header>
 <section class="hero"><div class="container">
-<h1>大陆寄台湾运费计算器</h1>
-<p>家具/搬家/设备/建材海运费用在线估算 · 输入重量体积即时参考报价</p>
+<h1>大陆寄台湾运费在线询价</h1>
+<p>家具/搬家/设备/建材海运费用在线询价 · 输入重量体积生成询价清单</p>
 </div></section>
 <div class="container"><div class="calculator">
-<h2>📐 运费估算</h2>
+<h2>📐 运费询价</h2>
 <div class="form-group"><label>货物类型</label><select id="cargoType"><option value="furniture">家具/搬家</option><option value="equipment">机械设备</option><option value="materials">建材</option><option value="general">普通货物</option></select></div>
 <div class="form-group"><label>实际重量 (kg)</label><input type="number" id="weight" placeholder="例如：500" min="1"></div>
 <div class="form-group"><label>体积 (长×宽×高 cm)</label><input type="text" id="volume" placeholder="例如：200×100×150" pattern="\d+×\d+×\d+"></div>
-<button class="btn btn-orange" onclick="calculate()">📊 估算运费</button>
+<button class="btn btn-orange" onclick="calculate()">📋 生成询价清单</button>
 <div class="result-box" id="result" style="display:none">
-  <p style="margin:0;font-size:14px;color:#666">参考运费（含税门到门）</p>
-  <div class="price" id="priceDisplay">¥0</div>
-  <p style="margin:4px 0;font-size:13px;color:#999">仅供参考，实际以专属客服报价为准</p>
+  <p style="margin:0;font-size:14px;color:#666">您的询价清单已生成</p>
+  <div class="price" id="priceDisplay" style="font-size:17px;line-height:1.9"></div>
+  <div id="detail" style="font-size:14px;color:#555;line-height:1.9;margin:8px 0"></div>
+  <button class="btn btn-orange" id="scc-copy" onclick="copyQuote('scc')" style="margin-top:10px">📋 复制清单发给客服</button>
+  <p style="margin:8px 0 0;font-size:13px;color:#999">复制后发送至微信 / 电话 <strong>13026603164</strong>，30 分钟内出含全部费用的精准报价。</p>
+  <div id="scc-quote" style="display:none"></div>
 </div>
-<p style="font-size:13px;color:#999;margin:16px 0">💡 以上为估算参考价，具体费用需根据货物类型、起运港、目的港等确认。建议直接联系我们获取精准报价。</p>
+<p style="font-size:13px;color:#999;margin:16px 0">💡 大陆到台湾无统一标准价，具体费用需根据货物类型、起运港、目的港等确认。建议直接联系我们获取精准报价。</p>
 </div></div>
 <section class="cta"><div class="container">
 <h2>📞 获取精准报价</h2><p style="margin:12px 0">拨打 13026603164 或 添加微信，专属客服30分钟内回覆</p>
@@ -81,7 +84,70 @@ footer{background:#1a1a2e;color:rgba(255,255,255,.5);padding:40px 0;text-align:c
 <footer><div class="container"><p>© 2026 速豹集运 · <a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow">湘ICP备2026016030号-2</a></p></div><div style="max-width:900px;margin:0 auto;padding:0 20px 20px;text-align:center;font-size:12px;color:#999"><p style="margin:0">大陆到台湾物流专线 · 家具海运搬家设备出口建材运输 · 门到门一站式服务 · 电话13026603164</p></div>
 </footer>
 <script>
-function calculate(){var w=parseFloat(document.getElementById('weight').value)||0;var v=document.getElementById('volume').value;var t=document.getElementById('cargoType').value;var volW=0;if(v){var parts=v.split('×');if(parts.length==3)volW=(parseFloat(parts[0])*parseFloat(parts[1])*parseFloat(parts[2]))/6000}var cw=Math.max(w,volW);var rate=4;if(t=='equipment')rate=4.5;if(t=='materials')rate=3.5;var price=cw*rate;document.getElementById('priceDisplay').textContent='¥'+Math.round(price);document.getElementById('result').style.display='block'}
+
+/* ===== 询价清单工具（官网不公示固定费率，改为按单报价） ===== */
+function buildQuote(title, lines) {
+  var s = title + '\n';
+  for (var i = 0; i < lines.length; i++) s += '· ' + lines[i] + '\n';
+  s += '\n请提供含全部费用（运输+报关+清关+派送）的精准报价。\n我的联系方式：';
+  return s;
+}
+function fallbackCopy(text, done) {
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.top = '-1000px';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  var ok = false;
+  try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+  document.body.removeChild(ta);
+  if (ok && done) done(); else alert('复制未成功，请长按选择清单文本手动复制');
+}
+function copyText(text, btn) {
+  var done = function () {
+    if (!btn) return;
+    var old = btn.getAttribute('data-old') || btn.textContent;
+    btn.setAttribute('data-old', old);
+    btn.textContent = '✅ 已复制，发给客服即可';
+    setTimeout(function () { btn.textContent = old; }, 2600);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text, done); });
+  } else {
+    fallbackCopy(text, done);
+  }
+}
+function copyQuote(panel) {
+  var q = document.getElementById(panel + '-quote');
+  if (!q) return;
+  copyText(q.getAttribute('data-quote') || '', document.getElementById(panel + '-copy'));
+}
+
+function calculate(){
+  var w=parseFloat(document.getElementById('weight').value)||0;
+  var v=document.getElementById('volume').value;
+  var tEl=document.getElementById('cargoType');
+  var t=tEl.options[tEl.selectedIndex].text;
+  var volW=0;
+  if(v){var parts=v.split('×');if(parts.length==3)volW=(parseFloat(parts[0])*parseFloat(parts[1])*parseFloat(parts[2]))/6000}
+  var cw=Math.max(w,volW);
+  var lines=[
+    '货物类型：'+t,
+    '实重：'+w+' kg',
+    '尺寸（长×宽×高 cm）：'+(v||'未填写'),
+    '材积重：'+volW.toFixed(1)+' kg',
+    '计费重：'+cw.toFixed(1)+' kg'
+  ];
+  document.getElementById('priceDisplay').innerHTML='已生成询价清单';
+  var d=document.getElementById('detail');
+  if(d){d.innerHTML=lines.join('<br>')+'<br><br><span style="font-size:12px;color:var(--text-muted)">* 大陆到台湾无统一标准价，费用按品类、实重与材积逐单核算，官网不公示固定费率</span>';}
+  document.getElementById('result').style.display='block';
+  var q=document.getElementById('scc-quote');
+  if(q){q.setAttribute('data-quote',buildQuote('【速豹集运 · 大陆寄台湾询价】',lines));}
+}
+
 </script>
 <script>
 var _hmt = _hmt || [];
@@ -92,6 +158,6 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"怎么计算大陆寄台湾的运费？","acceptedAnswer":{"@type":"Answer","text":"把物品清单（品类+重量+尺寸+目的地城市）发给速豹客服，即可获得普货/敏感货/快件的实时运费估算。费用按品类、重量与时效逐单核算。"}},{"@type":"Question","name":"材积重怎么算？","acceptedAnswer":{"@type":"Answer","text":"材积重(kg)=长(cm)×宽(cm)×高(cm)÷5000。如果材积重大于实际重量，运费按材积重计算。速豹材积计算器可在线一键换算。"}},{"@type":"Question","name":"运费计算器估算准吗？","acceptedAnswer":{"@type":"Answer","text":"在线估算仅供参考。实际运费以打包后的最终重量与材积为准，微信/电话 13026603164 可获取精确报价。"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"怎么计算大陆寄台湾的运费？","acceptedAnswer":{"@type":"Answer","text":"把物品清单（品类+重量+尺寸+目的地城市）发给速豹客服，即可获得普货/敏感货/快件的渠道与计费口径建议。费用按品类、重量与时效逐单核算。"}},{"@type":"Question","name":"材积重怎么算？","acceptedAnswer":{"@type":"Answer","text":"材积重(kg)=长(cm)×宽(cm)×高(cm)÷5000。如果材积重大于实际重量，运费按材积重计算。速豹材积计算器可在线一键换算。"}},{"@type":"Question","name":"运费能在线直接算出来吗？","acceptedAnswer":{"@type":"Answer","text":"大陆到台湾官网不公示固定费率，费用按品类、实重与材积逐单核算。实际运费以打包后的最终重量与材积为准，微信/电话 13026603164 可获取精确报价。"}}]}</script>
 
 </body></html>
