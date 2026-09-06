@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
-"""百度主动推送脚本 — 双token每日20条配额"""
+"""百度主动推送脚本 — subaotw.cn 专用 token，每日 10 条配额
+
+⚠️ token 按站点独立，禁止跨站混用：
+   - subaotw.cn  → zjjGnbA2oufj2XmY（本脚本）
+   - videotvai.com → UAVg0xt7rxpTjzaL（用在 subaotw.cn 会报 401 site error）
+   2026-09-06 修正：原脚本混入 videotvai token，导致一半请求 401 失败。
+"""
 import urllib.request
 import os
 
 TOKENS = [
-    "UAVg0xt7rxpTjzaL",
     "zjjGnbA2oufj2XmY",
 ]
 BASE = "http://data.zz.baidu.com/urls?site=https://www.subaotw.cn&token="
